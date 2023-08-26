@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 import 'package:ulearning/app_blocs.dart';
 import 'package:ulearning/app_events.dart';
 import 'package:ulearning/app_states.dart';
+import 'package:ulearning/pages/sign_in/sign_in.dart';
 import 'package:ulearning/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning/pages/welcome/welcome.dart';
 
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
             home: const Welcome(),
             routes: {
               "myHomePage" : (context) => const MyHomePage(),
+              "signIn" : (context) => const SignIn(),
             },
           ),
         ));
