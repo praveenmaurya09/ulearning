@@ -128,7 +128,7 @@ class _WelcomeState extends State<Welcome> {
             } else {
               // Jump to new page
               // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage()));
-              Navigator.of(context).pushNamedAndRemoveUntil("signIn", (route) => false);
+              Navigator.of(context).pushNamedAndRemoveUntil("/sign_in", (route) => false);
 
             }
           },
