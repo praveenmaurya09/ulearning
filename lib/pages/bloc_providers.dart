@@ -3,7 +3,6 @@ import 'package:ulearning/pages/register/bloc/register_blocs.dart';
 import 'package:ulearning/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:ulearning/pages/welcome/bloc/welcome_blocs.dart';
 
-import '../app_blocs.dart';
 
 class AppBlocProviders{
   static get allBlocProviders => [
