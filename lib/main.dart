@@ -6,11 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning/common/routes/routes.dart';
 
 import 'package:ulearning/common/values/colors.dart';
+import 'package:ulearning/global.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp();
+  await Global.init();
 
   runApp(const MyApp());
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ulearning/common/routes/names.dart';
+import 'package:ulearning/global.dart';
 import 'package:ulearning/pages/register/register.dart';
 import 'package:ulearning/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:ulearning/pages/welcome/bloc/welcome_blocs.dart';
@@ -59,7 +60,21 @@ class AppPages {
       // checking for the route matching when navigator gets triggered.
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
-        print("valid route name ${settings.name}");
+        print("first log");
+
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+
+        if(result.first.route == AppRoutes.INITIAL&&deviceFirstOpen){
+          bool isLoggedin = Global.storageService.getIsLoggedIn();
+
+          if(isLoggedin){
+            return MaterialPageRoute(builder: (_)=> const ApplicationPage(), settings: settings);
+          }
+          print("second log");
+          return MaterialPageRoute(builder: (_)=> const SignIn(), settings: settings);
+        }
+
+        // print("valid route name ${settings.name}");
         return MaterialPageRoute(
             builder: (_) => result.first.page, settings: settings);
       }
