@@ -65,7 +65,7 @@ class _RegisterState extends State<Register> {
                       ],
                     ),
                   ),
-
+                  SizedBox(height: 10.h,),
                   buildLogInAndRegButton("Sign Up", "login", () {
                     // Navigator.of(context).pushNamed("register");
                     RegisterController(context: context).handleEmailRegister();
