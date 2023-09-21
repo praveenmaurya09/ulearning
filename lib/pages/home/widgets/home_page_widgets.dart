@@ -7,6 +7,7 @@ import 'package:ulearning/pages/home/bloc/home_page_events.dart';
 import 'package:ulearning/pages/home/bloc/home_page_states.dart';
 
 import '../../../common/values/colors.dart';
+import 'home_page_widgest_two.dart';
 
 AppBar buildAppBar() {
   return AppBar(
@@ -39,9 +40,9 @@ AppBar buildAppBar() {
 
 // big reusable text widget
 Widget homePageText(String text,
-    {Color? color = AppColors.primaryText, int? top}) {
+    {Color? color = AppColors.primaryText, int top= 15}) {
   return Container(
-    margin: EdgeInsets.only(top: top!.h),
+    margin: EdgeInsets.only(top: top.h),
     child: Text(
       text,
       style:
@@ -192,22 +193,25 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-              _reusableMenuText("Choose your course"),
-              GestureDetector(child: _reusableMenuText("See all", color: AppColors.primaryThirdElementText, fontSize:12))
+            _reusableText("Choose your course"),
+            GestureDetector(
+                child: _reusableText("See all",
+                    color: AppColors.primaryThirdElementText,
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal))
           ],
         ),
       ),
       Container(
+        margin: EdgeInsets.only(top: 15.w),
         child: Row(
           children: [
-            Container(
+            reusableMenuText("All"),
 
-              decoration: BoxDecoration(
-                color: AppColors.primaryElement,
-                borderRadius: BorderRadius.circular(7.w),
-                border: Border.all(color: AppColors.primaryElement)
-              ),
-            )
+            reusableMenuText("Popular", textColor: AppColors.primaryThirdElementText, backGroundColor: Colors.white),
+
+            reusableMenuText("Newest", textColor: AppColors.primaryThirdElementText, backGroundColor: Colors.white),
+
           ],
         ),
       )
@@ -215,13 +219,16 @@ Widget menuView() {
   );
 }
 
-Widget _reusableMenuText(String text, {Color color = AppColors.primaryText, int fontSize =16}){
+Widget _reusableText(String text,
+    {Color color = AppColors.primaryText,
+    int fontSize = 16,
+    FontWeight fontWeight = FontWeight.bold}) {
   return Container(
     child: Text(
       text,
       style: TextStyle(
         color: color,
-        fontWeight: FontWeight.bold,
+        fontWeight: fontWeight,
         fontSize: fontSize.sp,
       ),
     ),
