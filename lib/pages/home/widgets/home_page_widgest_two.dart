@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/values/colors.dart';
+import '../../../common/widgets/base_text_widget.dart';
 
 
 // for course menu button
@@ -13,27 +14,11 @@ Widget reusableMenuText(String menuText, {Color textColor = AppColors.primaryEle
       color: backGroundColor,
       borderRadius: BorderRadius.circular(7.w),
       border: Border.all(color: backGroundColor),),
-    child: _reusableText(menuText, color: textColor, fontWeight: FontWeight.normal, fontSize: 11),
+    child: reusableText(menuText, color: textColor, fontWeight: FontWeight.normal, fontSize: 11),
 
   );
 }
 
-
-Widget _reusableText(String text,
-    {Color color = AppColors.primaryText,
-      int fontSize = 16,
-      FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize.sp,
-      ),
-    ),
-  );
-}
 
 
 // for Course Grid View

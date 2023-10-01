@@ -10,4 +10,6 @@ class AppRoutes{
   static const APPLICATION = "/application";
   //home page navigation screen
   static const HOME_PAGE = "/home_page";
+  //profile page settings of the app
+  static const SETTINGS = "/settings_page";
 }

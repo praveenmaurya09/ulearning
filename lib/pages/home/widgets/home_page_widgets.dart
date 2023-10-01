@@ -7,6 +7,7 @@ import 'package:ulearning/pages/home/bloc/home_page_events.dart';
 import 'package:ulearning/pages/home/bloc/home_page_states.dart';
 
 import '../../../common/values/colors.dart';
+import '../../../common/widgets/base_text_widget.dart';
 import 'home_page_widgest_two.dart';
 
 AppBar buildAppBar() {
@@ -193,9 +194,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableText("Choose your course"),
+            reusableText("Choose your course"),
             GestureDetector(
-                child: _reusableText("See all",
+                child: reusableText("See all",
                     color: AppColors.primaryThirdElementText,
                     fontSize: 12,
                     fontWeight: FontWeight.normal))
@@ -216,21 +217,5 @@ Widget menuView() {
         ),
       )
     ],
-  );
-}
-
-Widget _reusableText(String text,
-    {Color color = AppColors.primaryText,
-    int fontSize = 16,
-    FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize.sp,
-      ),
-    ),
   );
 }

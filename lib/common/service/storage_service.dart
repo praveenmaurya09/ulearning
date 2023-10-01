@@ -26,8 +26,12 @@ class StorageService{
     return _prefs.getBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME)??false;
  }
 
+  Future<bool> remove(String key) async {
+    return await _prefs.remove(key);
+  }
 
-  // bool getIsLoggedIn(){
+
+// bool getIsLoggedIn(){
   //   return _prefs.getBool(AppConstants.STORAGE_USER_TOKEN_KEY)??false;
   // }
 
